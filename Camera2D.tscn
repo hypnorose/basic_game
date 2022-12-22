@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjppuhkfl3c07"]
+
+[ext_resource type="Script" path="res://hp_bar.gd" id="1"]
+
+[node name="Camera2D" type="Camera2D"]
+position = Vector2(-1, 6)
+current = true
+
+[node name="hp_bar" type="ProgressBar" parent="."]
+visible = false
+offset_left = 227.0
+offset_top = 188.0
+offset_right = 414.0
+offset_bottom = 218.0
+value = 73.0
+script = ExtResource("1")
+
+[node name="Label" type="Label" parent="hp_bar"]
+offset_left = 46.0
+offset_right = 150.0
+offset_bottom = 39.0
+text = "7/12"

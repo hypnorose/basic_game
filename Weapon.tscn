@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://ba37relyergb0"]
+
+[ext_resource type="Script" path="res://Weapon.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c8ntynchalod5" path="res://art/weapons/droplet.png" id="2_ktbhl"]
+
+[sub_resource type="Animation" id="1"]
+resource_name = "weapon_shoot"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [14.3, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4uret"]
+_data = {
+"weapon_shoot": SubResource("1")
+}
+
+[node name="Weapon" type="Node2D"]
+script = ExtResource("1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_ktbhl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4uret")
+}

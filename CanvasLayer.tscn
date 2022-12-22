@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4w6ikcludfbw"]
+
+[ext_resource type="PackedScene" uid="uid://nnx5at0uiddp" path="res://hp_bar.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://bfgte2g6ms5dt" path="res://art/soul.png" id="4"]
+[ext_resource type="Script" path="res://soul_count.gd" id="5"]
+[ext_resource type="Script" path="res://time.gd" id="7"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="hp_bar" parent="." instance=ExtResource("1")]
+
+[node name="soul_count" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 59.0
+offset_right = 88.0
+offset_bottom = 97.0
+text = "0"
+script = ExtResource("5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 17.0
+offset_top = 63.0
+offset_right = 47.0
+offset_bottom = 93.0
+texture = ExtResource("4")
+ignore_texture_size = true
+
+[node name="time" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 25.0
+script = ExtResource("7")

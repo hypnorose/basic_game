@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu0fxvxlxbv1i"]
+
+[ext_resource type="Script" path="res://Button.gd" id="1"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1537.0
+offset_bottom = 866.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 511.0
+offset_top = 370.0
+offset_right = 1027.0
+offset_bottom = 509.0
+text = "Nowa gra"
+script = ExtResource("1")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

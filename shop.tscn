@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://1ogk46462qu4"]
+
+[ext_resource type="Script" path="res://shop.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://c1a58ux1qd4u4" path="res://item_panel.tscn" id="2"]
+[ext_resource type="Script" path="res://soul_count.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://bfgte2g6ms5dt" path="res://art/soul.png" id="5"]
+
+[node name="shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.997816, 1)
+script = ExtResource("1")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 2168.0
+offset_bottom = 1203.0
+scale = Vector2(0.710945, 0.715156)
+
+[node name="Panel2" parent="Panel" instance=ExtResource("2")]
+offset_left = 207.22
+offset_top = 255.888
+offset_right = 553.22
+offset_bottom = 694.888
+
+[node name="Panel3" parent="Panel" instance=ExtResource("2")]
+offset_left = 847.204
+offset_top = 255.888
+offset_right = 1193.2
+offset_bottom = 694.888
+
+[node name="Panel4" parent="Panel" instance=ExtResource("2")]
+offset_left = 1484.37
+offset_top = 255.888
+offset_right = 1830.37
+offset_bottom = 694.888
+
+[node name="Button" type="Button" parent="."]
+offset_left = 587.283
+offset_top = 688.0
+offset_right = 929.279
+offset_bottom = 756.0
+scale = Vector2(0.928387, 0.928387)
+shortcut_in_tooltip = false
+text = "dalej"
+
+[node name="soul_count" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 59.0
+offset_right = 88.0
+offset_bottom = 97.0
+text = "0"
+script = ExtResource("3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 17.0
+offset_top = 63.0
+offset_right = 45.0
+offset_bottom = 91.0
+texture = ExtResource("5")
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

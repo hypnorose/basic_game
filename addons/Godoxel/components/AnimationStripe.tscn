@@ -1,0 +1,132 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://addons/Godoxel/components/AnimationButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/Godoxel/components/AnimationStripe.gd" type="Script" id=2]
+[ext_resource path="res://addons/Godoxel/themes/AnimationStripe_Panel_normal.tres" type="StyleBox" id=3]
+[ext_resource path="res://addons/Godoxel/assets/bitstream_vera_sans_font_6016/Vera.ttf" type="FontFile" id=4]
+[ext_resource path="res://addons/Godoxel/assets/animation_arrow_up.png" type="Texture2D" id=5]
+[ext_resource path="res://addons/Godoxel/assets/animation_arrow_down.png" type="Texture2D" id=6]
+
+[sub_resource type="FontFile" id=1]
+size = 12
+use_filter = true
+font_data = ExtResource( 4 )
+
+[node name="AnimationStripe" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -813.0
+offset_bottom = -666.0
+minimum_size = Vector2( 0, 54 )
+size_flags_horizontal = 3
+custom_styles/panel = ExtResource( 3 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_right = -4.0
+pivot_offset = Vector2( -149, -134 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationButton" parent="HBoxContainer" instance=ExtResource( 1 )]
+offset_top = 7.0
+offset_right = 120.0
+offset_bottom = 47.0
+minimum_size = Vector2( 120, 40 )
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+offset_left = 124.0
+offset_right = 152.0
+offset_bottom = 54.0
+minimum_size = Vector2( 20, 0 )
+custom_constants/separation = 5
+alignment = 1
+
+[node name="Up" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+offset_top = 6.0
+offset_right = 28.0
+offset_bottom = 18.0
+minimum_size = Vector2( 28, 12 )
+size_flags_vertical = 6
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+
+[node name="Down" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+offset_top = 35.0
+offset_right = 28.0
+offset_bottom = 47.0
+minimum_size = Vector2( 28, 12 )
+size_flags_vertical = 6
+texture_normal = ExtResource( 6 )
+expand = true
+stretch_mode = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+offset_left = 156.0
+offset_right = 333.0
+offset_bottom = 54.0
+minimum_size = Vector2( 80, 0 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_vertical_enabled = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ScrollContainer"]
+offset_right = 54.0
+offset_bottom = 54.0
+size_flags_vertical = 3
+
+[node name="FrameContainer" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/HBoxContainer"]
+offset_bottom = 54.0
+minimum_size = Vector2( 0, 38 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/HBoxContainer"]
+offset_left = 4.0
+offset_right = 54.0
+offset_bottom = 54.0
+size_flags_vertical = 5
+
+[node name="AddFrame" type="Button" parent="HBoxContainer/ScrollContainer/HBoxContainer/HBoxContainer"]
+offset_right = 50.0
+offset_bottom = 54.0
+minimum_size = Vector2( 50, 0 )
+text = "+"
+
+[node name="Duplicate" type="Button" parent="HBoxContainer"]
+offset_left = 337.0
+offset_top = 9.0
+offset_right = 406.0
+offset_bottom = 44.0
+minimum_size = Vector2( 0, 35 )
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Duplicate"
+
+[node name="Delete" type="Button" parent="HBoxContainer"]
+offset_left = 410.0
+offset_top = 9.0
+offset_right = 459.0
+offset_bottom = 44.0
+minimum_size = Vector2( 0, 35 )
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "delete"
+
+[connection signal="on_animation_button_pressed" from="HBoxContainer/AnimationButton" to="." method="_on_AnimationButton_on_animation_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/AnimationButton" to="." method="_on_AnimationButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Up" to="." method="_on_Up_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Down" to="." method="_on_Down_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScrollContainer/HBoxContainer/HBoxContainer/AddFrame" to="." method="_on_AddFrame_pressed"]
+[connection signal="pressed" from="HBoxContainer/Duplicate" to="." method="_on_Duplicate_pressed"]
+[connection signal="pressed" from="HBoxContainer/Delete" to="." method="_on_Delete_pressed"]

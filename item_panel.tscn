@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1a58ux1qd4u4"]
+
+[ext_resource type="Texture2D" uid="uid://c8ntynchalod5" path="res://art/weapons/droplet.png" id="2_g7053"]
+[ext_resource type="Script" path="res://item_panel.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://bfgte2g6ms5dt" path="res://art/soul.png" id="4"]
+
+[node name="Panel" type="Panel"]
+offset_right = 346.0
+offset_bottom = 439.0
+pivot_offset = Vector2(-133, 158)
+script = ExtResource("3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(179.75, 94.9281)
+scale = Vector2(1.44687, 1.44311)
+texture = ExtResource("2_g7053")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 11.0
+offset_top = 160.0
+offset_right = 337.0
+offset_bottom = 208.0
+theme_override_font_sizes/font_size = 32
+text = "Kropla"
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 231.0
+offset_right = 207.0
+offset_bottom = 342.0
+text = "Opis jakis tam
+jazda jazda
+platynowa gwiazda"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 299.0
+offset_top = 381.0
+offset_right = 338.0
+offset_bottom = 420.0
+texture = ExtResource("4")
+
+[node name="Cost" type="Label" parent="."]
+offset_left = 260.0
+offset_top = 376.0
+offset_right = 302.0
+offset_bottom = 425.0
+theme_override_font_sizes/font_size = 32
+text = "3
+"
+
+[connection signal="gui_input" from="." to="." method="_on_Panel_gui_input"]
