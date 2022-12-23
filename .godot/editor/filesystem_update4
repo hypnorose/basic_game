@@ -12,3 +12,4 @@ res://shop.tscn
 res://item_panel.tscn
 res://Weapon.tscn
 res://PlayerVariables.tscn
+res://player.gd

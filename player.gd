@@ -77,8 +77,8 @@ func _process(delta):
 	var collided = move_and_collide(velocity.normalized()*speed*delta,false,true,true)
 	if collided:
 		#print(collided.collider)
-		pass
-	set_velocity(velocity.normalized()*speed)
+		pass	
+	set_velocity(lerp(get_real_velocity(),velocity.normalized()*speed,0.2))
 	set_floor_stop_on_slope_enabled(false)
 	move_and_slide()
 	if velocity==Vector2(0,0) :

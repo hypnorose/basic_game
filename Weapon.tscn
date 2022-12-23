@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Weapon.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://c8ntynchalod5" path="res://art/weapons/droplet.png" id="2_ktbhl"]
 
-[sub_resource type="Animation" id="1"]
+[sub_resource type="Animation" id="Animation_ho2ei"]
 resource_name = "weapon_shoot"
 length = 0.2
 step = 0.05
@@ -32,9 +32,9 @@ tracks/1/keys = {
 "values": [14.3, 0.0]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4uret"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nyvue"]
 _data = {
-"weapon_shoot": SubResource("1")
+"weapon_shoot": SubResource("Animation_ho2ei")
 }
 
 [node name="Weapon" type="Node2D"]
@@ -46,5 +46,5 @@ texture = ExtResource("2_ktbhl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_4uret")
+"": SubResource("AnimationLibrary_nyvue")
 }
