@@ -141,7 +141,7 @@ PlayerVariables="*res://PlayerVariables.gd"
 
 window/size/viewport_width=1536
 window/size/viewport_height=864
-window/stretch/aspect="expand"
+window/stretch/mode="viewport"
 window/size/width=1600
 window/size/height=900
 

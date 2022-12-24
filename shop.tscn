@@ -16,50 +16,91 @@ scale = Vector2(0.997816, 1)
 script = ExtResource("1")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 2168.0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.095
+anchor_right = 0.066
+offset_top = 82.08
+offset_right = 2066.62
 offset_bottom = 1203.0
 scale = Vector2(0.710945, 0.715156)
 
 [node name="Panel2" parent="Panel" instance=ExtResource("2")]
-offset_left = 207.22
-offset_top = 255.888
-offset_right = 553.22
-offset_bottom = 694.888
+layout_mode = 0
+offset_left = 246.69
+offset_top = 278.261
+offset_right = 592.69
+offset_bottom = 717.261
 
 [node name="Panel3" parent="Panel" instance=ExtResource("2")]
-offset_left = 847.204
-offset_top = 255.888
-offset_right = 1193.2
-offset_bottom = 694.888
+layout_mode = 0
+offset_left = 916.277
+offset_top = 278.261
+offset_right = 1262.27
+offset_bottom = 717.261
 
 [node name="Panel4" parent="Panel" instance=ExtResource("2")]
-offset_left = 1484.37
-offset_top = 255.888
-offset_right = 1830.37
-offset_bottom = 694.888
+layout_mode = 0
+offset_left = 1583.05
+offset_top = 278.261
+offset_right = 1929.05
+offset_bottom = 717.261
 
-[node name="Button" type="Button" parent="."]
-offset_left = 587.283
-offset_top = 688.0
-offset_right = 929.279
-offset_bottom = 756.0
+[node name="button_next" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1256.0
+offset_top = 714.0
+offset_right = 1423.0
+offset_bottom = 782.0
 scale = Vector2(0.928387, 0.928387)
 shortcut_in_tooltip = false
-text = "dalej"
+text = "Następna runda"
+
+[node name="button_roll" type="Button" parent="."]
+layout_mode = 0
+offset_left = 711.554
+offset_top = 63.0
+offset_right = 844.554
+offset_bottom = 127.0
+text = "Losuj"
+alignment = 0
+
+[node name="TextureRect2" type="TextureRect" parent="button_roll"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.05
+anchor_bottom = 0.066
+offset_left = 105.804
+offset_top = 25.0
+offset_right = 116.254
+offset_bottom = 36.776
+texture = ExtResource("5")
+
+[node name="Label" type="Label" parent="button_roll"]
+layout_mode = 0
+offset_left = 59.7028
+offset_top = 20.0
+offset_right = 99.7028
+offset_bottom = 46.0
+text = "5"
+horizontal_alignment = 2
 
 [node name="soul_count" type="Label" parent="."]
-offset_left = 48.0
-offset_top = 59.0
-offset_right = 88.0
-offset_bottom = 97.0
+layout_mode = 0
+offset_left = 51.0
+offset_top = 65.0
+offset_right = 91.0
+offset_bottom = 91.0
 text = "0"
 script = ExtResource("3")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 17.0
 offset_top = 63.0
 offset_right = 45.0
 offset_bottom = 91.0
 texture = ExtResource("5")
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="button_next" to="." method="_on_button_next_pressed"]
+[connection signal="pressed" from="button_roll" to="." method="_on_button_roll_pressed"]

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bfgte2g6ms5dt" path="res://art/soul.png" id="1"]
 [ext_resource type="Script" path="res://soul.gd" id="2"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7i7fw"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_pe7n5"]
 radius = 9.0
 
 [node name="soul" type="RigidBody2D" groups=["soul"]]
@@ -16,7 +16,7 @@ script = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2, 2)
-shape = SubResource("CircleShape2D_7i7fw")
+shape = SubResource("CircleShape2D_pe7n5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2.25, 2.25)

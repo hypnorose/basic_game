@@ -19,4 +19,3 @@ func _ready():
 func _on_Panel_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		get_owner().item_picked(id)
-	pass # Replace with function body.a

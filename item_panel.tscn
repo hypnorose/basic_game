@@ -16,7 +16,7 @@ scale = Vector2(1.44687, 1.44311)
 texture = ExtResource("2_g7053")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 11.0
+offset_left = 19.0
 offset_top = 160.0
 offset_right = 337.0
 offset_bottom = 208.0
@@ -41,12 +41,13 @@ offset_bottom = 420.0
 texture = ExtResource("4")
 
 [node name="Cost" type="Label" parent="."]
-offset_left = 260.0
-offset_top = 376.0
-offset_right = 302.0
-offset_bottom = 425.0
+offset_left = 241.0
+offset_top = 377.0
+offset_right = 287.0
+offset_bottom = 426.0
 theme_override_font_sizes/font_size = 32
 text = "3
 "
+horizontal_alignment = 2
 
 [connection signal="gui_input" from="." to="." method="_on_Panel_gui_input"]
