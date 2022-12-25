@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://foe.gd" id="2"]
 [ext_resource type="Script" path="res://player_collision.gd" id="3"]
 
-[sub_resource type="Animation" id="Animation_petgf"]
+[sub_resource type="Animation" id="Animation_jvor1"]
 length = 0.1
 
-[sub_resource type="Animation" id="Animation_kadur"]
+[sub_resource type="Animation" id="Animation_p5vce"]
 resource_name = "foe_animation"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -22,13 +22,13 @@ tracks/0/keys = {
 "values": [Vector2(1, 1), Vector2(0.9, 1.1), Vector2(1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2mica"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0uh41"]
 _data = {
-"RESET": SubResource("Animation_petgf"),
-"foe_animation": SubResource("Animation_kadur")
+"RESET": SubResource("Animation_jvor1"),
+"foe_animation": SubResource("Animation_p5vce")
 }
 
-[sub_resource type="Animation" id="Animation_xhbbj"]
+[sub_resource type="Animation" id="Animation_k2uyd"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -43,7 +43,7 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_32hjt"]
+[sub_resource type="Animation" id="Animation_lbfk1"]
 resource_name = "foe_hit"
 length = 0.08
 step = 0.01
@@ -60,7 +60,7 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(100, 100, 100, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_dekhu"]
+[sub_resource type="Animation" id="Animation_yb8kp"]
 resource_name = "foe_spawn"
 length = 1.5
 tracks/0/type = "value"
@@ -76,14 +76,14 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_o37dx"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kml1e"]
 _data = {
-"RESET": SubResource("Animation_xhbbj"),
-"foe_hit": SubResource("Animation_32hjt"),
-"foe_spawn": SubResource("Animation_dekhu")
+"RESET": SubResource("Animation_k2uyd"),
+"foe_hit": SubResource("Animation_lbfk1"),
+"foe_spawn": SubResource("Animation_yb8kp")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hiutt"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p4ddi"]
 radius = 25.014
 height = 59.2924
 
@@ -104,7 +104,7 @@ texture = ExtResource("1")
 root_node = NodePath("../Sprite2/Sprite2D")
 reset_on_save = false
 libraries = {
-"": SubResource("AnimationLibrary_2mica")
+"": SubResource("AnimationLibrary_0uh41")
 }
 
 [node name="foe_collision" type="CollisionPolygon2D" parent="."]
@@ -115,7 +115,7 @@ polygon = PackedVector2Array(-3.80212, 6.61763, 4.32358, 6.59483, 4.32358, -2.59
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_o37dx")
+"": SubResource("AnimationLibrary_kml1e")
 }
 
 [node name="player_collision" type="Area2D" parent="."]
@@ -127,6 +127,6 @@ script = ExtResource("3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_collision"]
 position = Vector2(0, -1.85289)
-shape = SubResource("CapsuleShape2D_hiutt")
+shape = SubResource("CapsuleShape2D_p4ddi")
 
 [connection signal="body_entered" from="player_collision" to="player_collision" method="_on_player_collision_body_entered"]

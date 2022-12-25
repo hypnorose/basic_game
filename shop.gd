@@ -59,10 +59,6 @@ func _on_button_next_pressed():
 	get_tree().change_scene_to_file("res://scena.tscn")
 	pass # Replace with function body.
 
-
-
-
-
 func _on_button_roll_pressed():
 	if PlayerVariables.xp >= 5:
 		PlayerVariables.xp -= 5
